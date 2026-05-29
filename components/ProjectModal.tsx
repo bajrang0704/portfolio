@@ -45,32 +45,37 @@ export default function ProjectModal({ project, onClose }: Props) {
           className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-8"
           onClick={onClose}
         >
-          <div className="absolute inset-0 bg-[#0A0A08]/90 backdrop-blur-sm" />
+          {/* Dark backdrop — stays dark since modal overlays the dark project section */}
+          <div className="absolute inset-0 bg-[#080808]/85 backdrop-blur-sm" />
 
           <motion.div
             initial={{ opacity: 0, scale: 0.93, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.93, y: 20 }}
             transition={{ duration: 0.25, ease: "easeOut" }}
-            className="relative z-10 glass-card rounded-2xl w-full max-w-2xl max-h-[85vh] overflow-y-auto"
+            className="relative z-10 rounded-2xl w-full max-w-2xl max-h-[85vh] overflow-y-auto"
+            style={{
+              background: "rgba(18,18,14,0.96)",
+              border: "1px solid rgba(255,215,0,0.12)",
+              backdropFilter: "blur(16px)",
+            }}
             onClick={(e) => e.stopPropagation()}
           >
             <div className="absolute top-0 left-0 right-0 h-[3px] rounded-t-2xl" style={topBorderStyle} />
 
             <button
               onClick={onClose}
-              className="absolute top-4 right-4 w-8 h-8 rounded-full border border-[#FFFEF0]/10 flex items-center justify-center text-[#8A8A70] hover:text-[#FFFEF0] hover:border-[#FFFEF0]/30 transition-all z-10"
+              className="absolute top-4 right-4 w-8 h-8 rounded-full border border-white/10 flex items-center justify-center text-white/50 hover:text-white hover:border-white/30 transition-all z-10"
             >
               <X size={16} />
             </button>
 
             <div className="p-8 pt-10">
-              {/* Categories */}
               <div className="flex flex-wrap gap-2 mb-4">
                 {project.categories.map((cat) => (
                   <span
                     key={cat}
-                    className="px-2.5 py-0.5 rounded-full text-xs border border-[#FFFEF0]/10 text-[#8A8A70]"
+                    className="px-2.5 py-0.5 rounded-full text-xs border border-white/10 text-white/50"
                     style={{ fontFamily: "var(--font-code)" }}
                   >
                     {cat}
@@ -79,14 +84,14 @@ export default function ProjectModal({ project, onClose }: Props) {
               </div>
 
               <h3
-                className="text-2xl font-bold text-[#FFFEF0] mb-4 pr-8"
+                className="text-2xl font-bold text-white mb-4 pr-8"
                 style={{ fontFamily: "var(--font-syne)" }}
               >
                 {project.title}
               </h3>
 
               <p
-                className="text-[#8A8A70] leading-relaxed mb-6"
+                className="text-white/60 leading-relaxed mb-6"
                 style={{ fontFamily: "var(--font-dm-sans)" }}
               >
                 {project.shortDescription}
@@ -95,7 +100,7 @@ export default function ProjectModal({ project, onClose }: Props) {
               {project.highlights.length > 0 && (
                 <div className="mb-6">
                   <h4
-                    className="text-xs font-semibold tracking-widest uppercase text-[#8A8A70] mb-3"
+                    className="text-xs font-semibold tracking-widest uppercase text-white/40 mb-3"
                     style={{ fontFamily: "var(--font-dm-sans)" }}
                   >
                     Key Highlights
@@ -108,7 +113,7 @@ export default function ProjectModal({ project, onClose }: Props) {
                           style={{ background: dotColor }}
                         />
                         <span
-                          className="text-[#FFFEF0]/80 text-sm leading-relaxed"
+                          className="text-white/75 text-sm leading-relaxed"
                           style={{ fontFamily: "var(--font-dm-sans)" }}
                         >
                           {h}
@@ -122,7 +127,7 @@ export default function ProjectModal({ project, onClose }: Props) {
               {project.techStack.length > 0 && (
                 <div className="mb-7">
                   <h4
-                    className="text-xs font-semibold tracking-widest uppercase text-[#8A8A70] mb-3"
+                    className="text-xs font-semibold tracking-widest uppercase text-white/40 mb-3"
                     style={{ fontFamily: "var(--font-dm-sans)" }}
                   >
                     Tech Stack
@@ -131,7 +136,7 @@ export default function ProjectModal({ project, onClose }: Props) {
                     {project.techStack.map((tech) => (
                       <span
                         key={tech}
-                        className="px-2.5 py-1 rounded-full text-xs border border-[#FFFEF0]/10 text-[#FFFEF0]/60 bg-[#FFFEF0]/5"
+                        className="px-2.5 py-1 rounded-full text-xs border border-white/10 text-white/50 bg-white/5"
                         style={{ fontFamily: "var(--font-code)" }}
                       >
                         {tech}
@@ -148,7 +153,7 @@ export default function ProjectModal({ project, onClose }: Props) {
                       href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-4 py-2 rounded-full border border-[#FFFEF0]/20 text-sm text-[#FFFEF0]/70 hover:text-[#FFFEF0] hover:border-[#FFFEF0]/40 transition-all"
+                      className="flex items-center gap-2 px-4 py-2 rounded-full border border-white/20 text-sm text-white/70 hover:text-white hover:border-white/40 transition-all"
                       style={{ fontFamily: "var(--font-dm-sans)" }}
                     >
                       <GitHubIcon size={15} /> GitHub

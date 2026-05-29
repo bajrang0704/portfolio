@@ -15,11 +15,20 @@ export default function ProjectsSection() {
     : projects.filter((p) => p.categories.includes(activeFilter));
 
   return (
-    <section id="projects" className="py-24 lg:py-32 relative">
+    <section id="projects" className="py-24 lg:py-32 relative bg-[#0A0A08]">
+      {/* Subtle gold orb top-left */}
       <div
         className="absolute top-0 left-0 w-96 h-96 pointer-events-none opacity-10"
         style={{
-          background: "radial-gradient(circle, rgba(255,215,0,0.4) 0%, transparent 70%)",
+          background: "radial-gradient(circle, rgba(255,215,0,0.5) 0%, transparent 70%)",
+          filter: "blur(80px)",
+        }}
+      />
+      {/* Subtle teal orb bottom-right */}
+      <div
+        className="absolute bottom-0 right-0 w-80 h-80 pointer-events-none opacity-10"
+        style={{
+          background: "radial-gradient(circle, rgba(0,191,166,0.5) 0%, transparent 70%)",
           filter: "blur(80px)",
         }}
       />
@@ -33,13 +42,13 @@ export default function ProjectsSection() {
           className="text-center mb-12"
         >
           <h2
-            className="text-4xl lg:text-5xl font-black text-[#FFFEF0] mb-3"
+            className="text-4xl lg:text-5xl font-black text-white mb-3"
             style={{ fontFamily: "var(--font-syne)" }}
           >
             Projects That Ship
           </h2>
           <p
-            className="text-[#8A8A70] text-base lg:text-lg max-w-xl mx-auto"
+            className="text-white/50 text-base lg:text-lg max-w-xl mx-auto"
             style={{ fontFamily: "var(--font-dm-sans)" }}
           >
             From AI systems to full-stack products — built to solve real problems
@@ -61,7 +70,7 @@ export default function ProjectsSection() {
               className={`px-4 py-1.5 rounded-full text-xs font-medium border transition-all duration-200 ${
                 activeFilter === tab
                   ? "border-[#FFD700] text-[#FFD700] bg-[#FFD700]/10"
-                  : "border-[#FFFEF0]/10 text-[#8A8A70] hover:border-[#FFFEF0]/25 hover:text-[#FFFEF0]"
+                  : "border-white/10 text-white/50 hover:border-white/25 hover:text-white"
               }`}
               style={{ fontFamily: "var(--font-code)" }}
             >

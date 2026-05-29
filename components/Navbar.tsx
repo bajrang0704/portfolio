@@ -30,7 +30,7 @@ export default function Navbar() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "backdrop-blur-md border-b border-[#FFD700]/10 bg-[#0A0A08]/85"
+          ? "bg-white/90 backdrop-blur-md border-b border-[#1A1A14]/8 shadow-sm"
           : "bg-transparent"
       }`}
     >
@@ -47,7 +47,7 @@ export default function Navbar() {
             PBR
           </span>
           <span
-            className="text-[#FFFEF0]/60 text-sm font-medium tracking-widest uppercase hidden sm:block group-hover:text-[#FFFEF0] transition-colors"
+            className="text-[#6B6B5A] text-sm font-medium tracking-widest uppercase hidden sm:block group-hover:text-[#1A1A14] transition-colors"
             style={{ fontFamily: "var(--font-dm-sans)" }}
           >
             Prabanjan
@@ -60,7 +60,7 @@ export default function Navbar() {
             <button
               key={link.href}
               onClick={() => scrollTo(link.href)}
-              className="text-[#8A8A70] hover:text-[#FFFEF0] transition-colors text-sm font-medium tracking-wide"
+              className="text-[#6B6B5A] hover:text-[#1A1A14] transition-colors text-sm font-medium tracking-wide"
               style={{ fontFamily: "var(--font-dm-sans)" }}
             >
               {link.label}
@@ -68,7 +68,7 @@ export default function Navbar() {
           ))}
           <button
             onClick={() => scrollTo("#contact")}
-            className="px-5 py-2 rounded-full text-sm font-semibold border border-[#FFD700]/40 text-[#FFD700] hover:bg-[#FFD700]/10 hover:border-[#FFD700] hover:shadow-[0_0_20px_rgba(255,215,0,0.3)] transition-all duration-300"
+            className="px-5 py-2 rounded-full text-sm font-semibold border border-[#D4A800] text-[#D4A800] hover:bg-[#D4A800] hover:text-white hover:shadow-[0_0_20px_rgba(212,168,0,0.3)] transition-all duration-300"
             style={{ fontFamily: "var(--font-dm-sans)" }}
           >
             Hire Me
@@ -77,7 +77,7 @@ export default function Navbar() {
 
         {/* Mobile hamburger */}
         <button
-          className="md:hidden text-[#FFFEF0]/60 hover:text-[#FFFEF0] transition-colors"
+          className="md:hidden text-[#6B6B5A] hover:text-[#1A1A14] transition-colors"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
         >
@@ -91,19 +91,19 @@ export default function Navbar() {
           menuOpen ? "max-h-64 opacity-100" : "max-h-0 opacity-0"
         }`}
       >
-        <div className="bg-[#0A0A08]/95 backdrop-blur-md border-b border-[#FFD700]/10 px-6 py-4 flex flex-col gap-4">
+        <div className="bg-white/95 backdrop-blur-md border-b border-[#1A1A14]/8 px-6 py-4 flex flex-col gap-4">
           {navLinks.map((link) => (
             <button
               key={link.href}
               onClick={() => scrollTo(link.href)}
-              className="text-left text-[#8A8A70] hover:text-[#FFFEF0] transition-colors text-sm font-medium py-1"
+              className="text-left text-[#6B6B5A] hover:text-[#1A1A14] transition-colors text-sm font-medium py-1"
             >
               {link.label}
             </button>
           ))}
           <button
             onClick={() => scrollTo("#contact")}
-            className="self-start px-5 py-2 rounded-full text-sm font-semibold border border-[#FFD700]/40 text-[#FFD700] hover:bg-[#FFD700]/10 transition-all"
+            className="self-start px-5 py-2 rounded-full text-sm font-semibold border border-[#D4A800] text-[#D4A800] hover:bg-[#D4A800] hover:text-white transition-all"
           >
             Hire Me
           </button>

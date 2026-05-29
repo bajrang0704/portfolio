@@ -5,9 +5,9 @@ import { motion } from "framer-motion";
 import { skillGroups } from "@/data/skills";
 
 const accentStyles = {
-  cyan: "border-[#FFD700]/40 text-[#FFD700] hover:border-[#FFD700] hover:shadow-[0_0_12px_rgba(255,215,0,0.3)]",
-  violet: "border-[#00BFA6]/40 text-[#00BFA6] hover:border-[#00BFA6] hover:shadow-[0_0_12px_rgba(0,191,166,0.3)]",
-  neutral: "border-[#FFFEF0]/10 text-[#FFFEF0]/70 hover:border-[#FFFEF0]/30 hover:text-[#FFFEF0]",
+  cyan: "border-[#D4A800]/50 text-[#D4A800] bg-[#D4A800]/5 hover:border-[#D4A800] hover:bg-[#D4A800]/10 hover:shadow-[0_0_12px_rgba(212,168,0,0.2)]",
+  violet: "border-[#007A6A]/50 text-[#007A6A] bg-[#007A6A]/5 hover:border-[#007A6A] hover:bg-[#007A6A]/10 hover:shadow-[0_0_12px_rgba(0,122,106,0.2)]",
+  neutral: "border-[#1A1A14]/12 text-[#6B6B5A] bg-[#1A1A14]/4 hover:border-[#1A1A14]/25 hover:text-[#1A1A14]",
 };
 
 export default function SkillsSection() {
@@ -18,10 +18,10 @@ export default function SkillsSection() {
     : skillGroups;
 
   return (
-    <section id="skills" className="py-24 lg:py-32 relative grid-bg">
+    <section id="skills" className="py-24 lg:py-32 relative bg-[#FAFAF7] grid-bg">
       <div
         className="absolute inset-0 pointer-events-none"
-        style={{ background: "linear-gradient(to bottom, rgba(10,10,8,0.8) 0%, transparent 20%, transparent 80%, rgba(10,10,8,0.8) 100%)" }}
+        style={{ background: "linear-gradient(to bottom, rgba(250,250,247,0.9) 0%, transparent 15%, transparent 85%, rgba(250,250,247,0.9) 100%)" }}
       />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -34,13 +34,13 @@ export default function SkillsSection() {
           className="text-center mb-14"
         >
           <h2
-            className="text-4xl lg:text-5xl font-black text-[#FFFEF0] mb-3"
+            className="text-4xl lg:text-5xl font-black text-[#1A1A14] mb-3"
             style={{ fontFamily: "var(--font-syne)" }}
           >
             Technical Arsenal
           </h2>
           <p
-            className="text-[#8A8A70] text-base lg:text-lg"
+            className="text-[#6B6B5A] text-base lg:text-lg"
             style={{ fontFamily: "var(--font-dm-sans)" }}
           >
             The stack I use to build production-grade AI systems
@@ -59,8 +59,8 @@ export default function SkillsSection() {
             onClick={() => setActiveGroup(null)}
             className={`px-4 py-1.5 rounded-full text-xs font-medium border transition-all duration-200 ${
               activeGroup === null
-                ? "border-[#FFD700] text-[#FFD700] bg-[#FFD700]/10"
-                : "border-[#FFFEF0]/10 text-[#8A8A70] hover:border-[#FFFEF0]/30 hover:text-[#FFFEF0]"
+                ? "border-[#D4A800] text-[#D4A800] bg-[#D4A800]/10"
+                : "border-[#1A1A14]/12 text-[#6B6B5A] hover:border-[#1A1A14]/25 hover:text-[#1A1A14]"
             }`}
             style={{ fontFamily: "var(--font-code)" }}
           >
@@ -73,11 +73,11 @@ export default function SkillsSection() {
               className={`px-4 py-1.5 rounded-full text-xs font-medium border transition-all duration-200 ${
                 activeGroup === group.id
                   ? group.accent === "cyan"
-                    ? "border-[#FFD700] text-[#FFD700] bg-[#FFD700]/10"
+                    ? "border-[#D4A800] text-[#D4A800] bg-[#D4A800]/10"
                     : group.accent === "violet"
-                    ? "border-[#00BFA6] text-[#00BFA6] bg-[#00BFA6]/10"
-                    : "border-[#FFFEF0]/30 text-[#FFFEF0] bg-[#FFFEF0]/10"
-                  : "border-[#FFFEF0]/10 text-[#8A8A70] hover:border-[#FFFEF0]/30 hover:text-[#FFFEF0]"
+                    ? "border-[#007A6A] text-[#007A6A] bg-[#007A6A]/10"
+                    : "border-[#1A1A14]/25 text-[#1A1A14] bg-[#1A1A14]/8"
+                  : "border-[#1A1A14]/12 text-[#6B6B5A] hover:border-[#1A1A14]/25 hover:text-[#1A1A14]"
               }`}
               style={{ fontFamily: "var(--font-code)" }}
             >
@@ -100,7 +100,7 @@ export default function SkillsSection() {
                 className="text-xs font-semibold tracking-widest uppercase mb-4"
                 style={{
                   fontFamily: "var(--font-dm-sans)",
-                  color: group.accent === "cyan" ? "#FFD700" : group.accent === "violet" ? "#00BFA6" : "#8A8A70",
+                  color: group.accent === "cyan" ? "#D4A800" : group.accent === "violet" ? "#007A6A" : "#6B6B5A",
                 }}
               >
                 {group.label}
@@ -114,7 +114,7 @@ export default function SkillsSection() {
                     transition={{ duration: 0.3, delay: si * 0.05 }}
                     viewport={{ once: true }}
                     whileHover={{ scale: 1.05 }}
-                    className={`px-3 py-1.5 rounded-full text-xs border bg-[#FFFEF0]/5 cursor-default transition-all duration-200 ${accentStyles[group.accent]}`}
+                    className={`px-3 py-1.5 rounded-full text-xs border cursor-default transition-all duration-200 ${accentStyles[group.accent]}`}
                     style={{ fontFamily: "var(--font-code)" }}
                   >
                     {skill}

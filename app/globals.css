@@ -1,12 +1,12 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-bg-primary: #0A0A08;
-  --color-accent-gold: #FFD700;
-  --color-accent-teal: #00BFA6;
-  --color-text-primary: #FFFEF0;
-  --color-text-muted: #8A8A70;
-  --color-card-surface: rgba(255, 255, 255, 0.04);
+  --color-bg-primary: #FAFAF7;
+  --color-bg-surface: #F2F0EB;
+  --color-accent-gold: #D4A800;
+  --color-accent-teal: #007A6A;
+  --color-text-primary: #1A1A14;
+  --color-text-muted: #6B6B5A;
   --font-display: "Syne", sans-serif;
   --font-body: "DM Sans", sans-serif;
   --font-code: "JetBrains Mono", monospace;
@@ -14,26 +14,26 @@
 
 html {
   scroll-behavior: smooth;
-  background-color: #0A0A08;
+  background-color: #FAFAF7;
 }
 
 body {
-  background-color: #0A0A08;
-  color: #FFFEF0;
+  background-color: #FAFAF7;
+  color: #1A1A14;
   font-family: "DM Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
 /* Animated gradient text */
 .gradient-text {
-  background: linear-gradient(135deg, #FFD700, #00BFA6);
+  background: linear-gradient(135deg, #D4A800, #007A6A);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .gradient-text-animated {
-  background: linear-gradient(135deg, #FFD700 0%, #00BFA6 50%, #FFD700 100%);
+  background: linear-gradient(135deg, #D4A800 0%, #007A6A 50%, #D4A800 100%);
   background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -48,17 +48,18 @@ body {
 /* Grid background pattern */
 .grid-bg {
   background-image:
-    linear-gradient(rgba(255, 215, 0, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 215, 0, 0.04) 1px, transparent 1px);
+    linear-gradient(rgba(26, 26, 20, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(26, 26, 20, 0.05) 1px, transparent 1px);
   background-size: 60px 60px;
 }
 
-/* Glassmorphism */
+/* Light glassmorphism card */
 .glass-card {
-  background: rgba(255, 255, 240, 0.03);
+  background: rgba(255, 255, 255, 0.75);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 215, 0, 0.08);
+  border: 1px solid rgba(26, 26, 20, 0.08);
+  box-shadow: 0 2px 20px rgba(26, 26, 20, 0.06);
 }
 
 /* Gradient top border */
@@ -71,16 +72,16 @@ body {
   height: 2px;
   border-radius: 2px 2px 0 0;
 }
-.gradient-top-border-cyan::before  { background: #FFD700; }
-.gradient-top-border-violet::before { background: #00BFA6; }
+.gradient-top-border-cyan::before  { background: #D4A800; }
+.gradient-top-border-violet::before { background: #007A6A; }
 .gradient-top-border-gradient::before {
-  background: linear-gradient(135deg, #FFD700, #00BFA6);
+  background: linear-gradient(135deg, #D4A800, #007A6A);
 }
 
 /* Badge pulse glow */
 @keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 6px rgba(255, 215, 0, 0.4); }
-  50% { box-shadow: 0 0 18px rgba(255, 215, 0, 0.75); }
+  0%, 100% { box-shadow: 0 0 6px rgba(212, 168, 0, 0.3); }
+  50% { box-shadow: 0 0 16px rgba(212, 168, 0, 0.6); }
 }
 .badge-pulse { animation: pulse-glow 2s ease-in-out infinite; }
 
@@ -111,15 +112,15 @@ body {
   100% { background-position: 200% center; }
 }
 .btn-shimmer:hover {
-  background: linear-gradient(135deg, #FFD700 0%, #00BFA6 50%, #FFD700 100%);
+  background: linear-gradient(135deg, #D4A800 0%, #007A6A 50%, #D4A800 100%);
   background-size: 200% auto;
   animation: btn-shimmer 1.5s linear infinite;
 }
 
 /* Custom scrollbar */
 ::-webkit-scrollbar { width: 5px; }
-::-webkit-scrollbar-track { background: #0A0A08; }
+::-webkit-scrollbar-track { background: #F2F0EB; }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(#FFD700, #00BFA6);
+  background: linear-gradient(#D4A800, #007A6A);
   border-radius: 3px;
 }

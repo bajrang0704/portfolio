@@ -19,32 +19,24 @@ export default function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden grid-bg"
+      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden grid-bg bg-[#FAFAF7]"
     >
-      {/* Floating gradient orbs */}
+      {/* Floating gradient orbs — soft on light bg */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div
-          className="orb1 absolute -top-32 -left-32 w-[500px] h-[500px] rounded-full opacity-20"
+          className="orb1 absolute -top-32 -left-32 w-[500px] h-[500px] rounded-full opacity-30"
           style={{
             background:
-              "radial-gradient(circle, rgba(255,215,0,0.4) 0%, transparent 70%)",
-            filter: "blur(60px)",
+              "radial-gradient(circle, rgba(212,168,0,0.25) 0%, transparent 70%)",
+            filter: "blur(70px)",
           }}
         />
         <div
-          className="orb2 absolute -bottom-32 -right-32 w-[600px] h-[600px] rounded-full opacity-20"
+          className="orb2 absolute -bottom-32 -right-32 w-[600px] h-[600px] rounded-full opacity-25"
           style={{
             background:
-              "radial-gradient(circle, rgba(0,191,166,0.4) 0%, transparent 70%)",
-            filter: "blur(60px)",
-          }}
-        />
-        <div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full opacity-5"
-          style={{
-            background:
-              "radial-gradient(circle, rgba(255,215,0,0.3) 0%, rgba(0,191,166,0.3) 50%, transparent 70%)",
-            filter: "blur(80px)",
+              "radial-gradient(circle, rgba(0,122,106,0.2) 0%, transparent 70%)",
+            filter: "blur(70px)",
           }}
         />
       </div>
@@ -56,11 +48,11 @@ export default function HeroSection() {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#FFD700]/30 bg-[#FFD700]/5 badge-pulse mb-8"
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#D4A800]/40 bg-[#D4A800]/8 badge-pulse mb-8"
         >
-          <span className="w-2 h-2 rounded-full bg-[#FFD700] animate-pulse" />
+          <span className="w-2 h-2 rounded-full bg-[#D4A800] animate-pulse" />
           <span
-            className="text-[#FFD700] text-sm font-medium"
+            className="text-[#D4A800] text-sm font-medium"
             style={{ fontFamily: "var(--font-dm-sans)" }}
           >
             Available for Freelance Projects
@@ -72,11 +64,11 @@ export default function HeroSection() {
           style={{ fontFamily: "var(--font-syne)" }}
           className="text-5xl sm:text-6xl lg:text-[80px] font-black leading-[1.05] tracking-tight mb-6"
         >
-          <motion.span {...fadeUp(0.3)} className="block text-[#FFFEF0]">
+          <motion.span {...fadeUp(0.3)} className="block text-[#1A1A14]">
             Building{" "}
             <span className="gradient-text-animated">AI-Powered</span>
           </motion.span>
-          <motion.span {...fadeUp(0.4)} className="block text-[#FFFEF0]">
+          <motion.span {...fadeUp(0.4)} className="block text-[#1A1A14]">
             Software That Works.
           </motion.span>
         </motion.h1>
@@ -84,13 +76,13 @@ export default function HeroSection() {
         {/* Sub-headline */}
         <motion.div {...fadeUp(0.55)}>
           <p
-            className="text-[#8A8A70] text-base sm:text-lg lg:text-xl max-w-2xl mx-auto leading-relaxed mb-2"
+            className="text-[#6B6B5A] text-base sm:text-lg lg:text-xl max-w-2xl mx-auto leading-relaxed mb-2"
             style={{ fontFamily: "var(--font-dm-sans)" }}
           >
             AI Engineer · Full-Stack Developer · LLM Systems Architect
           </p>
           <p
-            className="text-[#8A8A70]/80 text-sm sm:text-base max-w-xl mx-auto leading-relaxed"
+            className="text-[#6B6B5A]/80 text-sm sm:text-base max-w-xl mx-auto leading-relaxed"
             style={{ fontFamily: "var(--font-dm-sans)" }}
           >
             Turning complex problems into intelligent software — from RAG pipelines
@@ -105,9 +97,9 @@ export default function HeroSection() {
         >
           <button
             onClick={() => scrollTo("#projects")}
-            className="btn-shimmer flex items-center gap-2 px-7 py-3.5 rounded-full font-semibold text-[#0A0A08] text-sm transition-all duration-300 shadow-[0_0_30px_rgba(255,215,0,0.3)] hover:shadow-[0_0_40px_rgba(255,215,0,0.5)]"
+            className="btn-shimmer flex items-center gap-2 px-7 py-3.5 rounded-full font-semibold text-white text-sm transition-all duration-300 shadow-[0_4px_20px_rgba(212,168,0,0.4)] hover:shadow-[0_6px_30px_rgba(212,168,0,0.5)]"
             style={{
-              background: "linear-gradient(135deg, #FFD700, #00BFA6)",
+              background: "linear-gradient(135deg, #D4A800, #007A6A)",
               fontFamily: "var(--font-dm-sans)",
             }}
           >
@@ -117,7 +109,7 @@ export default function HeroSection() {
           <a
             href="/resume.pdf"
             download
-            className="flex items-center gap-2 px-7 py-3.5 rounded-full font-semibold text-sm border border-[#FFFEF0]/20 text-[#FFFEF0]/80 hover:border-[#FFD700]/40 hover:text-[#FFFEF0] hover:bg-[#FFD700]/5 transition-all duration-300"
+            className="flex items-center gap-2 px-7 py-3.5 rounded-full font-semibold text-sm border border-[#1A1A14]/20 text-[#1A1A14] hover:border-[#D4A800] hover:text-[#D4A800] hover:bg-[#D4A800]/5 transition-all duration-300"
             style={{ fontFamily: "var(--font-dm-sans)" }}
           >
             <Download size={16} />
@@ -153,7 +145,7 @@ export default function HeroSection() {
               target={label !== "Email" ? "_blank" : undefined}
               rel={label !== "Email" ? "noopener noreferrer" : undefined}
               aria-label={label}
-              className="w-10 h-10 rounded-full border border-[#FFFEF0]/10 flex items-center justify-center text-[#8A8A70] hover:text-[#FFD700] hover:border-[#FFD700]/40 hover:shadow-[0_0_15px_rgba(255,215,0,0.3)] transition-all duration-300"
+              className="w-10 h-10 rounded-full border border-[#1A1A14]/15 flex items-center justify-center text-[#6B6B5A] hover:text-[#D4A800] hover:border-[#D4A800]/50 hover:shadow-[0_0_15px_rgba(212,168,0,0.25)] transition-all duration-300"
             >
               <Icon size={18} />
             </a>
@@ -162,7 +154,7 @@ export default function HeroSection() {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 bounce-arrow text-[#8A8A70]">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 bounce-arrow text-[#6B6B5A]">
         <ChevronDown size={28} />
       </div>
     </section>
