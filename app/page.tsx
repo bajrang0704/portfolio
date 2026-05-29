@@ -8,7 +8,7 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#050A0F] overflow-x-hidden">
+    <main className="min-h-screen bg-[#0A0A08] overflow-x-hidden">
       <Navbar />
       <HeroSection />
       <AboutSection />

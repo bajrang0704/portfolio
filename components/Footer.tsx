@@ -13,17 +13,17 @@ const quickLinks = [
 
 export default function Footer() {
   return (
-    <footer className="border-t border-white/5 py-8 px-6">
+    <footer className="border-t border-[#FFD700]/8 py-8 px-6">
       <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
         <p
-          className="text-[#7A8A99]/60 text-xs"
+          className="text-[#8A8A70]/60 text-xs"
           style={{ fontFamily: "var(--font-dm-sans)" }}
         >
           © 2025 Prabanjan Banala Reddy
         </p>
 
         <p
-          className="text-[#7A8A99]/40 text-xs"
+          className="text-[#8A8A70]/40 text-xs"
           style={{ fontFamily: "var(--font-dm-sans)" }}
         >
           Built with Next.js · Designed with ❤️
@@ -34,7 +34,7 @@ export default function Footer() {
             <button
               key={link.href}
               onClick={() => scrollTo(link.href)}
-              className="text-[#7A8A99]/50 hover:text-[#7A8A99] text-xs transition-colors"
+              className="text-[#8A8A70]/50 hover:text-[#FFD700] text-xs transition-colors"
               style={{ fontFamily: "var(--font-dm-sans)" }}
             >
               {link.label}

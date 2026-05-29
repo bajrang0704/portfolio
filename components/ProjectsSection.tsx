@@ -19,13 +19,12 @@ export default function ProjectsSection() {
       <div
         className="absolute top-0 left-0 w-96 h-96 pointer-events-none opacity-10"
         style={{
-          background: "radial-gradient(circle, rgba(0,217,255,0.4) 0%, transparent 70%)",
+          background: "radial-gradient(circle, rgba(255,215,0,0.4) 0%, transparent 70%)",
           filter: "blur(80px)",
         }}
       />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -34,13 +33,13 @@ export default function ProjectsSection() {
           className="text-center mb-12"
         >
           <h2
-            className="text-4xl lg:text-5xl font-black text-[#F0F6FF] mb-3"
+            className="text-4xl lg:text-5xl font-black text-[#FFFEF0] mb-3"
             style={{ fontFamily: "var(--font-syne)" }}
           >
             Projects That Ship
           </h2>
           <p
-            className="text-[#7A8A99] text-base lg:text-lg max-w-xl mx-auto"
+            className="text-[#8A8A70] text-base lg:text-lg max-w-xl mx-auto"
             style={{ fontFamily: "var(--font-dm-sans)" }}
           >
             From AI systems to full-stack products — built to solve real problems
@@ -61,8 +60,8 @@ export default function ProjectsSection() {
               onClick={() => setActiveFilter(tab)}
               className={`px-4 py-1.5 rounded-full text-xs font-medium border transition-all duration-200 ${
                 activeFilter === tab
-                  ? "border-[#00D9FF] text-[#00D9FF] bg-[#00D9FF]/10"
-                  : "border-white/10 text-[#7A8A99] hover:border-white/25 hover:text-white"
+                  ? "border-[#FFD700] text-[#FFD700] bg-[#FFD700]/10"
+                  : "border-[#FFFEF0]/10 text-[#8A8A70] hover:border-[#FFFEF0]/25 hover:text-[#FFFEF0]"
               }`}
               style={{ fontFamily: "var(--font-code)" }}
             >
@@ -71,7 +70,6 @@ export default function ProjectsSection() {
           ))}
         </motion.div>
 
-        {/* Project grid */}
         <AnimatePresence mode="wait">
           <motion.div
             key={activeFilter}

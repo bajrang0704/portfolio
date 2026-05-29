@@ -6,12 +6,6 @@ import { X, ExternalLink } from "lucide-react";
 import { GitHubIcon } from "./icons";
 import type { Project } from "@/data/projects";
 
-const accentGradient = {
-  cyan: "#00D9FF",
-  violet: "#7B2FFF",
-  gradient: "linear-gradient(135deg, #00D9FF, #7B2FFF)",
-};
-
 type Props = {
   project: Project | null;
   onClose: () => void;
@@ -32,10 +26,13 @@ export default function ProjectModal({ project, onClose }: Props) {
 
   const topBorderStyle =
     project?.accentColor === "gradient"
-      ? { background: "linear-gradient(135deg, #00D9FF, #7B2FFF)" }
+      ? { background: "linear-gradient(135deg, #FFD700, #00BFA6)" }
       : project?.accentColor === "cyan"
-      ? { background: "#00D9FF" }
-      : { background: "#7B2FFF" };
+      ? { background: "#FFD700" }
+      : { background: "#00BFA6" };
+
+  const dotColor =
+    project?.accentColor === "violet" ? "#00BFA6" : "#FFD700";
 
   return (
     <AnimatePresence>
@@ -48,10 +45,8 @@ export default function ProjectModal({ project, onClose }: Props) {
           className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-8"
           onClick={onClose}
         >
-          {/* Backdrop */}
-          <div className="absolute inset-0 bg-[#050A0F]/90 backdrop-blur-sm" />
+          <div className="absolute inset-0 bg-[#0A0A08]/90 backdrop-blur-sm" />
 
-          {/* Modal content */}
           <motion.div
             initial={{ opacity: 0, scale: 0.93, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -60,13 +55,11 @@ export default function ProjectModal({ project, onClose }: Props) {
             className="relative z-10 glass-card rounded-2xl w-full max-w-2xl max-h-[85vh] overflow-y-auto"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Gradient top line */}
             <div className="absolute top-0 left-0 right-0 h-[3px] rounded-t-2xl" style={topBorderStyle} />
 
-            {/* Close button */}
             <button
               onClick={onClose}
-              className="absolute top-4 right-4 w-8 h-8 rounded-full border border-white/10 flex items-center justify-center text-[#7A8A99] hover:text-white hover:border-white/30 transition-all z-10"
+              className="absolute top-4 right-4 w-8 h-8 rounded-full border border-[#FFFEF0]/10 flex items-center justify-center text-[#8A8A70] hover:text-[#FFFEF0] hover:border-[#FFFEF0]/30 transition-all z-10"
             >
               <X size={16} />
             </button>
@@ -77,7 +70,7 @@ export default function ProjectModal({ project, onClose }: Props) {
                 {project.categories.map((cat) => (
                   <span
                     key={cat}
-                    className="px-2.5 py-0.5 rounded-full text-xs border border-white/10 text-[#7A8A99]"
+                    className="px-2.5 py-0.5 rounded-full text-xs border border-[#FFFEF0]/10 text-[#8A8A70]"
                     style={{ fontFamily: "var(--font-code)" }}
                   >
                     {cat}
@@ -85,27 +78,24 @@ export default function ProjectModal({ project, onClose }: Props) {
                 ))}
               </div>
 
-              {/* Title */}
               <h3
-                className="text-2xl font-bold text-[#F0F6FF] mb-4 pr-8"
+                className="text-2xl font-bold text-[#FFFEF0] mb-4 pr-8"
                 style={{ fontFamily: "var(--font-syne)" }}
               >
                 {project.title}
               </h3>
 
-              {/* Description */}
               <p
-                className="text-[#7A8A99] leading-relaxed mb-6"
+                className="text-[#8A8A70] leading-relaxed mb-6"
                 style={{ fontFamily: "var(--font-dm-sans)" }}
               >
                 {project.shortDescription}
               </p>
 
-              {/* Highlights */}
               {project.highlights.length > 0 && (
                 <div className="mb-6">
                   <h4
-                    className="text-xs font-semibold tracking-widest uppercase text-[#7A8A99] mb-3"
+                    className="text-xs font-semibold tracking-widest uppercase text-[#8A8A70] mb-3"
                     style={{ fontFamily: "var(--font-dm-sans)" }}
                   >
                     Key Highlights
@@ -115,17 +105,10 @@ export default function ProjectModal({ project, onClose }: Props) {
                       <li key={i} className="flex items-start gap-3">
                         <span
                           className="mt-1.5 w-1.5 h-1.5 rounded-full shrink-0"
-                          style={{
-                            background:
-                              project.accentColor === "gradient"
-                                ? "#00D9FF"
-                                : project.accentColor === "cyan"
-                                ? "#00D9FF"
-                                : "#7B2FFF",
-                          }}
+                          style={{ background: dotColor }}
                         />
                         <span
-                          className="text-[#F0F6FF]/80 text-sm leading-relaxed"
+                          className="text-[#FFFEF0]/80 text-sm leading-relaxed"
                           style={{ fontFamily: "var(--font-dm-sans)" }}
                         >
                           {h}
@@ -136,11 +119,10 @@ export default function ProjectModal({ project, onClose }: Props) {
                 </div>
               )}
 
-              {/* Tech Stack */}
               {project.techStack.length > 0 && (
                 <div className="mb-7">
                   <h4
-                    className="text-xs font-semibold tracking-widest uppercase text-[#7A8A99] mb-3"
+                    className="text-xs font-semibold tracking-widest uppercase text-[#8A8A70] mb-3"
                     style={{ fontFamily: "var(--font-dm-sans)" }}
                   >
                     Tech Stack
@@ -149,7 +131,7 @@ export default function ProjectModal({ project, onClose }: Props) {
                     {project.techStack.map((tech) => (
                       <span
                         key={tech}
-                        className="px-2.5 py-1 rounded-full text-xs border border-white/10 text-[#F0F6FF]/60 bg-white/5"
+                        className="px-2.5 py-1 rounded-full text-xs border border-[#FFFEF0]/10 text-[#FFFEF0]/60 bg-[#FFFEF0]/5"
                         style={{ fontFamily: "var(--font-code)" }}
                       >
                         {tech}
@@ -159,7 +141,6 @@ export default function ProjectModal({ project, onClose }: Props) {
                 </div>
               )}
 
-              {/* Action links */}
               {(project.githubUrl || project.liveUrl) && (
                 <div className="flex gap-3">
                   {project.githubUrl && (
@@ -167,7 +148,7 @@ export default function ProjectModal({ project, onClose }: Props) {
                       href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-4 py-2 rounded-full border border-white/20 text-sm text-white/70 hover:text-white hover:border-white/40 transition-all"
+                      className="flex items-center gap-2 px-4 py-2 rounded-full border border-[#FFFEF0]/20 text-sm text-[#FFFEF0]/70 hover:text-[#FFFEF0] hover:border-[#FFFEF0]/40 transition-all"
                       style={{ fontFamily: "var(--font-dm-sans)" }}
                     >
                       <GitHubIcon size={15} /> GitHub
@@ -178,9 +159,9 @@ export default function ProjectModal({ project, onClose }: Props) {
                       href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-4 py-2 rounded-full text-sm text-white font-medium transition-all"
+                      className="flex items-center gap-2 px-4 py-2 rounded-full text-sm text-[#0A0A08] font-semibold transition-all"
                       style={{
-                        background: "linear-gradient(135deg, #00D9FF, #7B2FFF)",
+                        background: "linear-gradient(135deg, #FFD700, #00BFA6)",
                         fontFamily: "var(--font-dm-sans)",
                       }}
                     >
