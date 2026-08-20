@@ -84,6 +84,22 @@ body {
 }
 .bounce-arrow { animation: bounce-y 1.6s ease-in-out infinite; }
 
+/* Infinite logo marquee (CompaniesMarquee) — track renders the list
+   twice, this scrolls exactly one copy's width for a seamless loop. */
+@keyframes marquee {
+  to { transform: translateX(-50%); }
+}
+.marquee-track {
+  animation: marquee 28s linear infinite;
+}
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+.marquee-mask {
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar { width: 5px; }
 ::-webkit-scrollbar-track { background: var(--color-bg-surface); }

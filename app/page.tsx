@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
+import CompaniesMarquee from "@/components/CompaniesMarquee";
 import AboutSection from "@/components/AboutSection";
 import SkillsSection from "@/components/SkillsSection";
 import ProjectsSection from "@/components/ProjectsSection";
@@ -11,6 +12,7 @@ export default function Home() {
     <main className="min-h-screen bg-[#FFFFFF] overflow-x-hidden">
       <Navbar />
       <HeroSection />
+      <CompaniesMarquee />
       <AboutSection />
       <SkillsSection />
       <ProjectsSection />
