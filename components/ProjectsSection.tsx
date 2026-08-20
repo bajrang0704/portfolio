@@ -15,24 +15,7 @@ export default function ProjectsSection() {
     : projects.filter((p) => p.categories.includes(activeFilter));
 
   return (
-    <section id="projects" className="py-24 lg:py-32 relative bg-[#0A0A08]">
-      {/* Subtle gold orb top-left */}
-      <div
-        className="absolute top-0 left-0 w-96 h-96 pointer-events-none opacity-10"
-        style={{
-          background: "radial-gradient(circle, rgba(255,215,0,0.5) 0%, transparent 70%)",
-          filter: "blur(80px)",
-        }}
-      />
-      {/* Subtle teal orb bottom-right */}
-      <div
-        className="absolute bottom-0 right-0 w-80 h-80 pointer-events-none opacity-10"
-        style={{
-          background: "radial-gradient(circle, rgba(0,191,166,0.5) 0%, transparent 70%)",
-          filter: "blur(80px)",
-        }}
-      />
-
+    <section id="projects" className="py-24 lg:py-32 relative bg-[#F5F5F5]">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -42,14 +25,14 @@ export default function ProjectsSection() {
           className="text-center mb-12"
         >
           <h2
-            className="text-4xl lg:text-5xl font-black text-white mb-3"
-            style={{ fontFamily: "var(--font-syne)" }}
+            className="text-4xl lg:text-5xl font-black text-[#171717] mb-3"
+            style={{ fontFamily: "var(--font-display)" }}
           >
             Projects That Ship
           </h2>
           <p
-            className="text-white/50 text-base lg:text-lg max-w-xl mx-auto"
-            style={{ fontFamily: "var(--font-dm-sans)" }}
+            className="text-[#6B7280] text-base lg:text-lg max-w-xl mx-auto"
+            style={{ fontFamily: "var(--font-body)" }}
           >
             From AI systems to full-stack products — built to solve real problems
           </p>
@@ -69,8 +52,8 @@ export default function ProjectsSection() {
               onClick={() => setActiveFilter(tab)}
               className={`px-4 py-1.5 rounded-full text-xs font-medium border transition-all duration-200 ${
                 activeFilter === tab
-                  ? "border-[#FFD700] text-[#FFD700] bg-[#FFD700]/10"
-                  : "border-white/10 text-white/50 hover:border-white/25 hover:text-white"
+                  ? "border-[#2563EB] text-[#2563EB] bg-[#2563EB]/10"
+                  : "border-[#171717]/12 text-[#6B7280] hover:border-[#171717]/25 hover:text-[#171717]"
               }`}
               style={{ fontFamily: "var(--font-code)" }}
             >

@@ -47,14 +47,14 @@ export default function ContactSection() {
   };
 
   const inputClass =
-    "w-full bg-white border border-[#1A1A14]/12 rounded-xl px-4 py-3 text-[#1A1A14] placeholder-[#6B6B5A]/50 focus:outline-none focus:border-[#D4A800] focus:shadow-[0_0_0_3px_rgba(212,168,0,0.1)] transition-all text-sm";
+    "w-full bg-white border border-[#171717]/12 rounded-xl px-4 py-3 text-[#171717] placeholder-[#6B7280]/50 focus:outline-none focus:border-[#2563EB] focus:shadow-[0_0_0_3px_rgba(37,99,235,0.1)] transition-all text-sm";
 
   return (
-    <section id="contact" className="py-24 lg:py-32 relative overflow-hidden bg-[#F2F0EB]">
+    <section id="contact" className="py-24 lg:py-32 relative overflow-hidden bg-[#F5F5F5]">
       <div
         className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] pointer-events-none opacity-20"
         style={{
-          background: "radial-gradient(ellipse, rgba(212,168,0,0.4) 0%, rgba(0,122,106,0.3) 50%, transparent 70%)",
+          background: "radial-gradient(ellipse, rgba(37,99,235,0.4) 0%, rgba(37,99,235,0.3) 50%, transparent 70%)",
           filter: "blur(80px)",
         }}
       />
@@ -68,14 +68,14 @@ export default function ContactSection() {
           className="text-center mb-14"
         >
           <h2
-            className="text-4xl lg:text-5xl font-black text-[#1A1A14] mb-3"
-            style={{ fontFamily: "var(--font-syne)" }}
+            className="text-4xl lg:text-5xl font-black text-[#171717] mb-3"
+            style={{ fontFamily: "var(--font-display)" }}
           >
             Let&apos;s Build Something
           </h2>
           <p
-            className="text-[#6B6B5A] text-base lg:text-lg"
-            style={{ fontFamily: "var(--font-dm-sans)" }}
+            className="text-[#6B7280] text-base lg:text-lg"
+            style={{ fontFamily: "var(--font-body)" }}
           >
             Available for freelance projects, consulting, and full-time roles.
           </p>
@@ -90,9 +90,9 @@ export default function ContactSection() {
             viewport={{ once: true }}
             className="flex flex-col gap-8"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#D4A800]/40 bg-[#D4A800]/8 self-start badge-pulse">
-              <span className="w-2 h-2 rounded-full bg-[#D4A800] animate-pulse" />
-              <span className="text-[#D4A800] text-sm font-medium" style={{ fontFamily: "var(--font-dm-sans)" }}>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#2563EB]/40 bg-[#2563EB]/8 self-start badge-pulse">
+              <span className="w-2 h-2 rounded-full bg-[#2563EB] animate-pulse" />
+              <span className="text-[#2563EB] text-sm font-medium" style={{ fontFamily: "var(--font-body)" }}>
                 Open to Work — Freelance &amp; Full-Time
               </span>
             </div>
@@ -104,19 +104,19 @@ export default function ContactSection() {
                 { icon: MapPin, label: "Hyderabad, Telangana, India", href: null },
               ].map(({ icon: Icon, label, href }) => (
                 <div key={label} className="flex items-center gap-4">
-                  <div className="w-10 h-10 rounded-xl border border-[#D4A800]/25 bg-[#D4A800]/8 flex items-center justify-center text-[#D4A800]">
+                  <div className="w-10 h-10 rounded-xl border border-[#2563EB]/25 bg-[#2563EB]/8 flex items-center justify-center text-[#2563EB]">
                     <Icon size={18} />
                   </div>
                   {href ? (
                     <a
                       href={href}
-                      className="text-[#1A1A14]/80 hover:text-[#D4A800] transition-colors text-sm"
-                      style={{ fontFamily: "var(--font-dm-sans)" }}
+                      className="text-[#171717]/80 hover:text-[#2563EB] transition-colors text-sm"
+                      style={{ fontFamily: "var(--font-body)" }}
                     >
                       {label}
                     </a>
                   ) : (
-                    <span className="text-[#6B6B5A] text-sm" style={{ fontFamily: "var(--font-dm-sans)" }}>{label}</span>
+                    <span className="text-[#6B7280] text-sm" style={{ fontFamily: "var(--font-body)" }}>{label}</span>
                   )}
                 </div>
               ))}
@@ -133,7 +133,7 @@ export default function ContactSection() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="w-11 h-11 rounded-full border border-[#1A1A14]/15 flex items-center justify-center text-[#6B6B5A] hover:text-[#D4A800] hover:border-[#D4A800]/40 hover:shadow-[0_0_15px_rgba(212,168,0,0.2)] transition-all duration-300"
+                  className="w-11 h-11 rounded-full border border-[#171717]/15 flex items-center justify-center text-[#6B7280] hover:text-[#2563EB] hover:border-[#2563EB]/40 hover:shadow-[0_0_15px_rgba(37,99,235,0.2)] transition-all duration-300"
                 >
                   <Icon size={18} />
                 </a>
@@ -151,11 +151,11 @@ export default function ContactSection() {
             <form
               onSubmit={handleSubmit}
               className="rounded-2xl p-8 space-y-5 shadow-sm"
-              style={{ background: "white", border: "1px solid rgba(26,26,20,0.08)" }}
+              style={{ background: "white", border: "1px solid rgba(23,23,23,0.08)" }}
             >
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
-                  <label className="block text-[#6B6B5A] text-xs mb-2 font-medium tracking-wide" style={{ fontFamily: "var(--font-dm-sans)" }}>
+                  <label className="block text-[#6B7280] text-xs mb-2 font-medium tracking-wide" style={{ fontFamily: "var(--font-body)" }}>
                     Name
                   </label>
                   <input
@@ -166,11 +166,11 @@ export default function ContactSection() {
                     required
                     placeholder="Your name"
                     className={inputClass}
-                    style={{ fontFamily: "var(--font-dm-sans)" }}
+                    style={{ fontFamily: "var(--font-body)" }}
                   />
                 </div>
                 <div>
-                  <label className="block text-[#6B6B5A] text-xs mb-2 font-medium tracking-wide" style={{ fontFamily: "var(--font-dm-sans)" }}>
+                  <label className="block text-[#6B7280] text-xs mb-2 font-medium tracking-wide" style={{ fontFamily: "var(--font-body)" }}>
                     Email
                   </label>
                   <input
@@ -181,13 +181,13 @@ export default function ContactSection() {
                     required
                     placeholder="you@example.com"
                     className={inputClass}
-                    style={{ fontFamily: "var(--font-dm-sans)" }}
+                    style={{ fontFamily: "var(--font-body)" }}
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-[#6B6B5A] text-xs mb-2 font-medium tracking-wide" style={{ fontFamily: "var(--font-dm-sans)" }}>
+                <label className="block text-[#6B7280] text-xs mb-2 font-medium tracking-wide" style={{ fontFamily: "var(--font-body)" }}>
                   Project Type
                 </label>
                 <select
@@ -196,7 +196,7 @@ export default function ContactSection() {
                   onChange={handleChange}
                   required
                   className={`${inputClass} appearance-none`}
-                  style={{ fontFamily: "var(--font-dm-sans)" }}
+                  style={{ fontFamily: "var(--font-body)" }}
                 >
                   <option value="" disabled>Select project type</option>
                   {projectTypes.map((t) => (
@@ -206,7 +206,7 @@ export default function ContactSection() {
               </div>
 
               <div>
-                <label className="block text-[#6B6B5A] text-xs mb-2 font-medium tracking-wide" style={{ fontFamily: "var(--font-dm-sans)" }}>
+                <label className="block text-[#6B7280] text-xs mb-2 font-medium tracking-wide" style={{ fontFamily: "var(--font-body)" }}>
                   Message
                 </label>
                 <textarea
@@ -217,24 +217,24 @@ export default function ContactSection() {
                   rows={4}
                   placeholder="Tell me about your project..."
                   className={`${inputClass} resize-none`}
-                  style={{ fontFamily: "var(--font-dm-sans)" }}
+                  style={{ fontFamily: "var(--font-body)" }}
                 />
               </div>
 
               <button
                 type="submit"
                 disabled={status === "sending" || status === "sent"}
-                className="btn-shimmer w-full flex items-center justify-center gap-2 py-3.5 rounded-xl font-semibold text-white text-sm transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed shadow-[0_4px_20px_rgba(212,168,0,0.3)]"
+                className="btn-shimmer w-full flex items-center justify-center gap-2 py-3.5 rounded-xl font-semibold text-white text-sm transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed shadow-[0_4px_20px_rgba(37,99,235,0.3)]"
                 style={{
-                  background: "linear-gradient(135deg, #D4A800, #007A6A)",
-                  fontFamily: "var(--font-dm-sans)",
+                  background: "#2563EB",
+                  fontFamily: "var(--font-body)",
                 }}
               >
                 {status === "sending" ? "Sending..." : status === "sent" ? "Message Sent!" : <><Send size={15} /> Send Message</>}
               </button>
 
               {status === "error" && (
-                <p className="text-red-500 text-xs text-center" style={{ fontFamily: "var(--font-dm-sans)" }}>
+                <p className="text-red-500 text-xs text-center" style={{ fontFamily: "var(--font-body)" }}>
                   Something went wrong. Email directly: prabanjanreddy07@gmail.com
                 </p>
               )}

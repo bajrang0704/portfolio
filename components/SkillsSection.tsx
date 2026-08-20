@@ -5,9 +5,9 @@ import { motion } from "framer-motion";
 import { skillGroups } from "@/data/skills";
 
 const accentStyles = {
-  cyan: "border-[#D4A800]/50 text-[#D4A800] bg-[#D4A800]/5 hover:border-[#D4A800] hover:bg-[#D4A800]/10 hover:shadow-[0_0_12px_rgba(212,168,0,0.2)]",
-  violet: "border-[#007A6A]/50 text-[#007A6A] bg-[#007A6A]/5 hover:border-[#007A6A] hover:bg-[#007A6A]/10 hover:shadow-[0_0_12px_rgba(0,122,106,0.2)]",
-  neutral: "border-[#1A1A14]/12 text-[#6B6B5A] bg-[#1A1A14]/4 hover:border-[#1A1A14]/25 hover:text-[#1A1A14]",
+  cyan: "border-[#2563EB]/50 text-[#2563EB] bg-[#2563EB]/5 hover:border-[#2563EB] hover:bg-[#2563EB]/10 hover:shadow-[0_0_12px_rgba(37,99,235,0.2)]",
+  violet: "border-[#2563EB]/50 text-[#2563EB] bg-[#2563EB]/5 hover:border-[#2563EB] hover:bg-[#2563EB]/10 hover:shadow-[0_0_12px_rgba(37,99,235,0.2)]",
+  neutral: "border-[#171717]/12 text-[#6B7280] bg-[#171717]/4 hover:border-[#171717]/25 hover:text-[#171717]",
 };
 
 export default function SkillsSection() {
@@ -18,10 +18,10 @@ export default function SkillsSection() {
     : skillGroups;
 
   return (
-    <section id="skills" className="py-24 lg:py-32 relative bg-[#FAFAF7] grid-bg">
+    <section id="skills" className="py-24 lg:py-32 relative bg-[#FFFFFF] grid-bg">
       <div
         className="absolute inset-0 pointer-events-none"
-        style={{ background: "linear-gradient(to bottom, rgba(250,250,247,0.9) 0%, transparent 15%, transparent 85%, rgba(250,250,247,0.9) 100%)" }}
+        style={{ background: "linear-gradient(to bottom, rgba(255,255,255,0.9) 0%, transparent 15%, transparent 85%, rgba(255,255,255,0.9) 100%)" }}
       />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -34,14 +34,14 @@ export default function SkillsSection() {
           className="text-center mb-14"
         >
           <h2
-            className="text-4xl lg:text-5xl font-black text-[#1A1A14] mb-3"
-            style={{ fontFamily: "var(--font-syne)" }}
+            className="text-4xl lg:text-5xl font-black text-[#171717] mb-3"
+            style={{ fontFamily: "var(--font-display)" }}
           >
             Technical Arsenal
           </h2>
           <p
-            className="text-[#6B6B5A] text-base lg:text-lg"
-            style={{ fontFamily: "var(--font-dm-sans)" }}
+            className="text-[#6B7280] text-base lg:text-lg"
+            style={{ fontFamily: "var(--font-body)" }}
           >
             The stack I use to build production-grade AI systems
           </p>
@@ -59,8 +59,8 @@ export default function SkillsSection() {
             onClick={() => setActiveGroup(null)}
             className={`px-4 py-1.5 rounded-full text-xs font-medium border transition-all duration-200 ${
               activeGroup === null
-                ? "border-[#D4A800] text-[#D4A800] bg-[#D4A800]/10"
-                : "border-[#1A1A14]/12 text-[#6B6B5A] hover:border-[#1A1A14]/25 hover:text-[#1A1A14]"
+                ? "border-[#2563EB] text-[#2563EB] bg-[#2563EB]/10"
+                : "border-[#171717]/12 text-[#6B7280] hover:border-[#171717]/25 hover:text-[#171717]"
             }`}
             style={{ fontFamily: "var(--font-code)" }}
           >
@@ -73,11 +73,11 @@ export default function SkillsSection() {
               className={`px-4 py-1.5 rounded-full text-xs font-medium border transition-all duration-200 ${
                 activeGroup === group.id
                   ? group.accent === "cyan"
-                    ? "border-[#D4A800] text-[#D4A800] bg-[#D4A800]/10"
+                    ? "border-[#2563EB] text-[#2563EB] bg-[#2563EB]/10"
                     : group.accent === "violet"
-                    ? "border-[#007A6A] text-[#007A6A] bg-[#007A6A]/10"
-                    : "border-[#1A1A14]/25 text-[#1A1A14] bg-[#1A1A14]/8"
-                  : "border-[#1A1A14]/12 text-[#6B6B5A] hover:border-[#1A1A14]/25 hover:text-[#1A1A14]"
+                    ? "border-[#2563EB] text-[#2563EB] bg-[#2563EB]/10"
+                    : "border-[#171717]/25 text-[#171717] bg-[#171717]/8"
+                  : "border-[#171717]/12 text-[#6B7280] hover:border-[#171717]/25 hover:text-[#171717]"
               }`}
               style={{ fontFamily: "var(--font-code)" }}
             >
@@ -99,8 +99,8 @@ export default function SkillsSection() {
               <h3
                 className="text-xs font-semibold tracking-widest uppercase mb-4"
                 style={{
-                  fontFamily: "var(--font-dm-sans)",
-                  color: group.accent === "cyan" ? "#D4A800" : group.accent === "violet" ? "#007A6A" : "#6B6B5A",
+                  fontFamily: "var(--font-body)",
+                  color: group.accent === "cyan" ? "#2563EB" : group.accent === "violet" ? "#2563EB" : "#6B7280",
                 }}
               >
                 {group.label}

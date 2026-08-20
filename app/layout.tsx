@@ -1,25 +1,30 @@
 import type { Metadata } from "next";
-import { Syne, DM_Sans, JetBrains_Mono } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-const syne = Syne({
+// FONTS — change the imported font name above and here to swap a
+// typeface (any font from fonts.google.com works). The variable
+// names (--font-display, --font-body, --font-code) are matched to
+// the same names in app/globals.css, so a swap here needs no other
+// changes anywhere else in the app.
+const displayFont = Inter({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-  variable: "--font-syne",
+  weight: ["500", "600", "700", "800"],
+  variable: "--font-inter-display",
   display: "swap",
 });
 
-const dmSans = DM_Sans({
+const bodyFont = Inter({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600"],
-  variable: "--font-dm-sans",
+  variable: "--font-inter-body",
   display: "swap",
 });
 
-const jetbrainsMono = JetBrains_Mono({
+const codeFont = JetBrains_Mono({
   subsets: ["latin"],
   weight: ["400", "500"],
-  variable: "--font-jetbrains",
+  variable: "--font-jetbrains-mono",
   display: "swap",
 });
 
@@ -55,7 +60,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${syne.variable} ${dmSans.variable} ${jetbrainsMono.variable}`}
+      className={`${displayFont.variable} ${bodyFont.variable} ${codeFont.variable}`}
     >
       <body>{children}</body>
     </html>

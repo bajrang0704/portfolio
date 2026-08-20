@@ -11,6 +11,9 @@ type Props = {
   onClose: () => void;
 };
 
+const topBorderStyle = { background: "#2563EB" };
+const dotColor = "#2563EB";
+
 export default function ProjectModal({ project, onClose }: Props) {
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && onClose();
@@ -24,16 +27,6 @@ export default function ProjectModal({ project, onClose }: Props) {
     return () => { document.body.style.overflow = ""; };
   }, [project]);
 
-  const topBorderStyle =
-    project?.accentColor === "gradient"
-      ? { background: "linear-gradient(135deg, #FFD700, #00BFA6)" }
-      : project?.accentColor === "cyan"
-      ? { background: "#FFD700" }
-      : { background: "#00BFA6" };
-
-  const dotColor =
-    project?.accentColor === "violet" ? "#00BFA6" : "#FFD700";
-
   return (
     <AnimatePresence>
       {project && (
@@ -45,19 +38,18 @@ export default function ProjectModal({ project, onClose }: Props) {
           className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-8"
           onClick={onClose}
         >
-          {/* Dark backdrop — stays dark since modal overlays the dark project section */}
-          <div className="absolute inset-0 bg-[#080808]/85 backdrop-blur-sm" />
+          {/* Dimming backdrop */}
+          <div className="absolute inset-0 bg-[#171717]/60 backdrop-blur-sm" />
 
           <motion.div
             initial={{ opacity: 0, scale: 0.93, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.93, y: 20 }}
             transition={{ duration: 0.25, ease: "easeOut" }}
-            className="relative z-10 rounded-2xl w-full max-w-2xl max-h-[85vh] overflow-y-auto"
+            className="relative z-10 rounded-2xl w-full max-w-2xl max-h-[85vh] overflow-y-auto shadow-xl"
             style={{
-              background: "rgba(18,18,14,0.96)",
-              border: "1px solid rgba(255,215,0,0.12)",
-              backdropFilter: "blur(16px)",
+              background: "#FFFFFF",
+              border: "1px solid rgba(23,23,23,0.08)",
             }}
             onClick={(e) => e.stopPropagation()}
           >
@@ -65,7 +57,7 @@ export default function ProjectModal({ project, onClose }: Props) {
 
             <button
               onClick={onClose}
-              className="absolute top-4 right-4 w-8 h-8 rounded-full border border-white/10 flex items-center justify-center text-white/50 hover:text-white hover:border-white/30 transition-all z-10"
+              className="absolute top-4 right-4 w-8 h-8 rounded-full border border-[#171717]/10 flex items-center justify-center text-[#171717]/50 hover:text-[#171717] hover:border-[#171717]/30 transition-all z-10"
             >
               <X size={16} />
             </button>
@@ -75,7 +67,7 @@ export default function ProjectModal({ project, onClose }: Props) {
                 {project.categories.map((cat) => (
                   <span
                     key={cat}
-                    className="px-2.5 py-0.5 rounded-full text-xs border border-white/10 text-white/50"
+                    className="px-2.5 py-0.5 rounded-full text-xs border border-[#171717]/10 text-[#171717]/50"
                     style={{ fontFamily: "var(--font-code)" }}
                   >
                     {cat}
@@ -84,15 +76,15 @@ export default function ProjectModal({ project, onClose }: Props) {
               </div>
 
               <h3
-                className="text-2xl font-bold text-white mb-4 pr-8"
-                style={{ fontFamily: "var(--font-syne)" }}
+                className="text-2xl font-bold text-[#171717] mb-4 pr-8"
+                style={{ fontFamily: "var(--font-display)" }}
               >
                 {project.title}
               </h3>
 
               <p
-                className="text-white/60 leading-relaxed mb-6"
-                style={{ fontFamily: "var(--font-dm-sans)" }}
+                className="text-[#171717]/65 leading-relaxed mb-6"
+                style={{ fontFamily: "var(--font-body)" }}
               >
                 {project.shortDescription}
               </p>
@@ -100,8 +92,8 @@ export default function ProjectModal({ project, onClose }: Props) {
               {project.highlights.length > 0 && (
                 <div className="mb-6">
                   <h4
-                    className="text-xs font-semibold tracking-widest uppercase text-white/40 mb-3"
-                    style={{ fontFamily: "var(--font-dm-sans)" }}
+                    className="text-xs font-semibold tracking-widest uppercase text-[#171717]/45 mb-3"
+                    style={{ fontFamily: "var(--font-body)" }}
                   >
                     Key Highlights
                   </h4>
@@ -113,8 +105,8 @@ export default function ProjectModal({ project, onClose }: Props) {
                           style={{ background: dotColor }}
                         />
                         <span
-                          className="text-white/75 text-sm leading-relaxed"
-                          style={{ fontFamily: "var(--font-dm-sans)" }}
+                          className="text-[#171717]/75 text-sm leading-relaxed"
+                          style={{ fontFamily: "var(--font-body)" }}
                         >
                           {h}
                         </span>
@@ -127,8 +119,8 @@ export default function ProjectModal({ project, onClose }: Props) {
               {project.techStack.length > 0 && (
                 <div className="mb-7">
                   <h4
-                    className="text-xs font-semibold tracking-widest uppercase text-white/40 mb-3"
-                    style={{ fontFamily: "var(--font-dm-sans)" }}
+                    className="text-xs font-semibold tracking-widest uppercase text-[#171717]/45 mb-3"
+                    style={{ fontFamily: "var(--font-body)" }}
                   >
                     Tech Stack
                   </h4>
@@ -136,7 +128,7 @@ export default function ProjectModal({ project, onClose }: Props) {
                     {project.techStack.map((tech) => (
                       <span
                         key={tech}
-                        className="px-2.5 py-1 rounded-full text-xs border border-white/10 text-white/50 bg-white/5"
+                        className="px-2.5 py-1 rounded-full text-xs border border-[#171717]/10 text-[#171717]/50 bg-[#171717]/4"
                         style={{ fontFamily: "var(--font-code)" }}
                       >
                         {tech}
@@ -153,8 +145,8 @@ export default function ProjectModal({ project, onClose }: Props) {
                       href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-4 py-2 rounded-full border border-white/20 text-sm text-white/70 hover:text-white hover:border-white/40 transition-all"
-                      style={{ fontFamily: "var(--font-dm-sans)" }}
+                      className="flex items-center gap-2 px-4 py-2 rounded-full border border-[#171717]/15 text-sm text-[#171717]/75 hover:text-[#171717] hover:border-[#171717]/30 transition-all"
+                      style={{ fontFamily: "var(--font-body)" }}
                     >
                       <GitHubIcon size={15} /> GitHub
                     </a>
@@ -164,10 +156,10 @@ export default function ProjectModal({ project, onClose }: Props) {
                       href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-4 py-2 rounded-full text-sm text-[#0A0A08] font-semibold transition-all"
+                      className="flex items-center gap-2 px-4 py-2 rounded-full text-sm text-white font-semibold transition-all"
                       style={{
-                        background: "linear-gradient(135deg, #FFD700, #00BFA6)",
-                        fontFamily: "var(--font-dm-sans)",
+                        background: "#2563EB",
+                        fontFamily: "var(--font-body)",
                       }}
                     >
                       <ExternalLink size={15} /> Live Demo
