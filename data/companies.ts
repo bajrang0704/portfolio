@@ -17,4 +17,5 @@ export const companies: Company[] = [
   { name: "Cognito Energy", logo: "/logos/CognitoEnergy.png", url: "https://cognitoenergy.com/" },
   { name: "Houspire", logo: "/logos/Houspire.png", url: "https://houspire.ai/" },
   { name: "Capabl", logo: "/logos/capabl.jpg", url: "https://www.capabl.in/" },
+  { name: "Roastery", logo: "/logos/Roastery.webp", url: "https://roasterycoffee.co.in/" },
 ];
