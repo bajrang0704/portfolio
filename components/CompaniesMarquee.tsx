@@ -21,25 +21,40 @@ export default function CompaniesMarquee() {
 
       <div className="marquee-mask relative overflow-hidden">
         <div className="marquee-track flex items-center gap-16 w-max">
-          {track.map((company, i) => (
-            <div key={`${company.name}-${i}`} className="flex items-center shrink-0 h-8">
-              {company.logo ? (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img
-                  src={company.logo}
-                  alt={company.name}
-                  className="h-8 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity"
-                />
-              ) : (
-                <span
-                  className="text-[#171717]/50 hover:text-[#171717] text-lg font-semibold whitespace-nowrap transition-colors"
-                  style={{ fontFamily: "var(--font-display)" }}
-                >
-                  {company.name}
-                </span>
-              )}
-            </div>
-          ))}
+          {track.map((company, i) => {
+            const content = company.logo ? (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                src={company.logo}
+                alt={company.name}
+                className="h-8 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity"
+              />
+            ) : (
+              <span
+                className="text-[#171717]/50 hover:text-[#171717] text-lg font-semibold whitespace-nowrap transition-colors"
+                style={{ fontFamily: "var(--font-display)" }}
+              >
+                {company.name}
+              </span>
+            );
+
+            return (
+              <div key={`${company.name}-${i}`} className="flex items-center shrink-0 h-8">
+                {company.url ? (
+                  <a
+                    href={company.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={company.name}
+                  >
+                    {content}
+                  </a>
+                ) : (
+                  content
+                )}
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

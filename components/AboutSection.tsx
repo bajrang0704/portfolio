@@ -55,7 +55,7 @@ export default function AboutSection() {
               </p>
               <p>
                 I also train the next generation of AI builders as an{" "}
-                <span className="text-[#2563EB] font-semibold">Agentic AI Trainer at Capably</span>,
+                <span className="text-[#2563EB] font-semibold">Agentic AI Trainer at Capabl</span>,
                 running workshops at engineering colleges across Hyderabad.
               </p>
               <p>
