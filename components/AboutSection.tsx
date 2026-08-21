@@ -3,9 +3,9 @@
 import { motion } from "framer-motion";
 
 const stats = [
-  { value: "1+", label: "Year Professional Experience" },
+  { value: "2+", label: "Year Professional Experience" },
   { value: "10+", label: "AI Projects Shipped" },
-  { value: "3+", label: "Freelance Clients" },
+  { value: "7+", label: "Freelance Clients" },
   { value: "80%", label: "Manual Work Eliminated for Clients" },
 ];
 
