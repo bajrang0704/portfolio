@@ -13,4 +13,5 @@ export const companies: Company[] = [
   { name: "Cognito Advisory", logo: "/logos/CognitoAdvisory.png" },
   { name: "Cognito Energy", logo: "/logos/CognitoEnergy.png" },
   { name: "Houspire", logo: "/logos/Houspire.png" },
+  { name: "Capabl", logo: "/logos/cabapl.jpg" }
 ];
